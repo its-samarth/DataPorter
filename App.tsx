@@ -1,11 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Platform } from 'react-native'
+import React, { useEffect } from 'react'
+import Navigation from './src/navigation/Navigation'
+import { requestPhotoPermission } from './src/utils/Constants'
+import { check } from 'react-native-permissions'
+import { checkFilePermissions } from './src/utils/libraryHelpers'
 
 const App = () => {
+  useEffect(()=>{
+    requestPhotoPermission()
+    checkFilePermissions(Platform.OS)
+  },[])
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <Navigation/>
   )
 }
 

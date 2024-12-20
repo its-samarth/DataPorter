@@ -13,7 +13,7 @@ export const commonStyles = StyleSheet.create({
         backgroundColor: Colors.background
     },
     img: {
-        width: screenWidth * 0.5,
+        width: screenWidth ,
         height: screenWidth * 0.5,
         resizeMode: 'contain'
     },
